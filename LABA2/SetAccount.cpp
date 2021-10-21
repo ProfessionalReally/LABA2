@@ -1,6 +1,6 @@
 #include "SetAccount.h"
 
-#define N 50
+
 SetAccount InitAccount(string name, string surname, string email, string password) //Инициализация аккаунта
 {
 	SetAccount User;

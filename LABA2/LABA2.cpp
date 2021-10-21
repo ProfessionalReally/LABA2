@@ -35,6 +35,8 @@ int main()
 	string executor = "Choi"; //Исполнитель
 	Music Like;
 	
+
+	int g = 0; //Флаг
 	int f = 1; //Флаг
 	int n; //Для выбора действий
 
@@ -51,17 +53,18 @@ int main()
 		{
 			do 
 			{
-
 				system("cls");
 				printf_s("\n  1 - Initialization\n  2 - Input\n  3 - Output\n  0 - Exit\n\n  Choose: ");
 				scanf_s("%d", &n);
 				if (n == 1)
 				{
 					User = InitAccount(nameA, surnameA, emailA, passwordA);
+					g = 1;
 				}
 				if (n == 2)
 				{
 					User = InputAccount();
+					g = 1;
 				}
 				if (n == 3)
 				{
@@ -73,83 +76,90 @@ int main()
 		}
 		case 2: //Фигуры
 		{
-			do 
-			{
-				system("cls");
-				printf_s("\n  1 - Initialization\n  2 - Input\n  3 - Output\n  4 - Delete\n  0 - Exit\n\n  Choose: ");
-				scanf_s("%d", &n);
-				if (n == 1)
+			if (g) {
+				do
 				{
-					View = InitFigure(figure, color);
-				}
-				if (n == 2)
-				{
-					View = InputFigure();
-				}
-				if (n == 3)
-				{
-					OutputFigure(View);
-					system("pause");
-				}
-				if (n == 4)
-				{
-					View = DeleteFigure(View);
-				}
-			} while (n != 0);
+					system("cls");
+					printf_s("\n  1 - Initialization\n  2 - Input\n  3 - Output\n  4 - Delete\n  0 - Exit\n\n  Choose: ");
+					scanf_s("%d", &n);
+					if (n == 1)
+					{
+						View = InitFigure(figure, color);
+					}
+					if (n == 2)
+					{
+						View = InputFigure();
+					}
+					if (n == 3)
+					{
+						OutputFigure(View);
+						system("pause");
+					}
+					if (n == 4)
+					{
+						View = DeleteFigure(View);
+					}
+				} while (n != 0);
+			}
 			break;
 		}
 		case 3: //Друзья
 		{
-			do 
+			if (g) 
 			{
-				system("cls");
-				printf_s("\n  1 - Initialization\n  2 - Input\n  3 - Output\n  4 - Delete\n  0 - Exit\n\n  Choose: ");
-				scanf_s("%d", &n);
-				if (n == 1)
+				do
 				{
-					Human = InitFriends(nameF, surnameF);
-				}
-				if (n == 2)
-				{
-					Human = InputFriends();
-				}
-				if (n == 3)
-				{
-					OutputFriends(Human);
-					system("pause");
-				}
-				if (n == 4)
-				{
-					Human = DeleteFriends(Human);
-				}
-			} while (n != 0);
+					system("cls");
+					printf_s("\n  1 - Initialization\n  2 - Input\n  3 - Output\n  4 - Delete\n  0 - Exit\n\n  Choose: ");
+					scanf_s("%d", &n);
+					if (n == 1)
+					{
+						Human = InitFriends(nameF, surnameF);
+					}
+					if (n == 2)
+					{
+						Human = InputFriends();
+					}
+					if (n == 3)
+					{
+						OutputFriends(Human);
+						system("pause");
+					}
+					if (n == 4)
+					{
+						Human = DeleteFriends(Human);
+					}
+				} while (n != 0);
+			}
 			break;
 		}
 		case 4: //Музыка
 		{
-			do
-			{
-				system("cls");
-				printf_s("\n  1 - Initialization\n  2 - Input\n  3 - Output\n  4 - Delete\n  0 - Exit\n\n  Choose: ");
-				scanf_s("%d", &n);
-				if (n == 1)
+			if (g) {
+				do
 				{
-					Like = MUSICinit(executor, title);
-				}
-				if (n == 2)
-				{
-					Like = MUSICinput();
-				}
-				if (n == 3)
-				{
-					OutputMusic(Like);
-					system("pause");
-				}
-				if (n == 4)
-				{
-					Like = DeleteMusic(Like);
-				}
-			} while (n != 0);
+					system("cls");
+					printf_s("\n  1 - Initialization\n  2 - Input\n  3 - Output\n  4 - Delete\n  0 - Exit\n\n  Choose: ");
+					scanf_s("%d", &n);
+					if (n == 1)
+					{
+						Like = MUSICinit(executor, title);
+					}
+					if (n == 2)
+					{
+						Like = MUSICinput();
+					}
+					if (n == 3)
+					{
+						OutputMusic(Like);
+						system("pause");
+					}
+					if (n == 4)
+					{
+						Like = DeleteMusic(Like);
+					}
+				} while (n != 0);
+			}
 			break;
 		}
 		case 5: //Удаление и выход из аккаунта
